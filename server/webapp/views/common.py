@@ -21,8 +21,6 @@ def index_route():
 #@auto.doc()
 def return_predicted_time():
     json_array = request.get_json()
-    input_items = len(json_array)
-    print (input_items)
     
     df = pd.DataFrame.from_dict(json_array)
     df['Created Time'] = pd.to_datetime(df['Created Time'])
